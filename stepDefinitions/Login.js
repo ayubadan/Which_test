@@ -34,17 +34,14 @@ Then(/^I should see the filter by recommendations options disabled$/, async func
     expect(dont_buy_attr).to.equal('true')
 })
 
-When(/^I click on the Which recommendations dropdown$/, async function(){
-    const dropdown = await $("//button[@data-which-button='which_recommendations-filter']")
+When(/^I click on the sort by dropdown$/, async function(){
+    const dropdown = await $("#product_listing_sorter")
     await dropdown.click()
 })
 
-Then(/^I should see the filter by recommendations options disabled$/, async function(){
-    const best_buy_disabled = await $("#which_recommendations_best_buy")
-    const buy_attr = await best_buy_disabled.getAttribute('disabled')
-    expect(buy_attr).to.equal('true')
+Then(/^I should see the filter by highest which score disabled$/, async function(){
+    const highest_score = await $("//option[@value='which_score_desc']")
+    const highest_score_attr = await highest_score.getAttribute('disabled')
+    expect(highest_score_attr).to.equal('true')
 
-    const dont_buy_disabled = await $("#which_recommendations_don_t_buy")
-    const dont_buy_attr = await dont_buy_disabled.getAttribute('disabled')
-    expect(dont_buy_attr).to.equal('true')
 })
