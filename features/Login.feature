@@ -11,9 +11,9 @@ Feature: Login state
         When I click on the sort by dropdown
         Then I should see the filter by highest which score disabled
 
-    # Scenario: Check that the test scores are not visible
-    #     When I check the test score for each product
-    #     Then I should not see the result
+    Scenario: Check that the test scores are not visible
+        When I check the test score for each product
+        Then I should not see the result
 
     # Scenario: Check that the recommendation badge is not visible
     #     When I browser through the products

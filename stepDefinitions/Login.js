@@ -4,12 +4,13 @@ var expect = chai.expect;
 
 Given(/^I navigate to the Which TV landing page$/, async function(){
     await browser.url('https://www.which.co.uk/reviews/televisions')
-    var title =  await $("._1etsY")
-    var mytext = await title.getText()
+    const title =  await $("._1etsY")
+    const attr = await title.getAttribute('data-which-id')
+    expect(attr).to.equal('active-true')
+    
+    const mytext = await title.getText()
     console.log("mytext: "+mytext)
-
-    var expectedTitle = 'All Televisions'
-    expect(mytext).to.equal(expectedTitle,`Expected title to be "${expectedTitle}" but found "${mytext}"`);
+    expect(mytext).to.equal('All Televisions');
 })
 
 Given(/^I am not logged in$/, async function(){
@@ -43,5 +44,14 @@ Then(/^I should see the filter by highest which score disabled$/, async function
     const highest_score = await $("//option[@value='which_score_desc']")
     const highest_score_attr = await highest_score.getAttribute('disabled')
     expect(highest_score_attr).to.equal('true')
+})
 
+When(/^I check the test score for each product$/, async function(){
+    const ul = await $("._2xPiO")
+    const li = await ul.$$("li")
+    console.log("li: "+ li)
+})
+
+Then(/^I should not see the result$/, async function(){
+    
 })
