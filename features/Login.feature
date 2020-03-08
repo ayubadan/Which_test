@@ -3,13 +3,13 @@ Feature: Login state
         Given I navigate to the Which TV landing page 
         And I am not logged in
 
-    Scenario: Check recommendation dropdown
-        When I click on the Which recommendations dropdown
-        Then I should see the filter by recommendations options disabled
+    # Scenario: Check recommendation dropdown
+    #     When I click on the Which recommendations dropdown
+    #     Then I should see the filter by recommendations options disabled
     
-    Scenario: Check that the sort by dropdown does not let you filter by highest which score
-        When I click on the sort by dropdown
-        Then I should see the filter by highest which score disabled
+    # Scenario: Check that the sort by dropdown does not let you filter by highest which score
+    #     When I click on the sort by dropdown
+    #     Then I should see the filter by highest which score disabled
 
     Scenario: Check that the test scores are not visible
         When I check the test score for each product
