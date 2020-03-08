@@ -5,11 +5,11 @@ Feature: Login state
 
     Scenario: Check recommendation dropdown
         When I click on the Which recommendations dropdown
-        Then I should not be able to filter by recommendations
+        Then I should see the filter by recommendations options disabled
 
-    #  Scenario: Check that the recommendation badge is not visible
-    #     When I browser through the products
-    #     Then I should not be able to see a recommendation badge
+     Scenario: Check that the recommendation badge is not visible
+        When I browser through the products
+        Then I should not be able to see a recommendation badge
 
     # Scenario: Check that the test scores are not visible
     #     When I check the test score for each product
